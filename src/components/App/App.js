@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "../Form";
+import { useState } from "react";
 
 function App() {
+  const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState([
+    "Learn something new",
+    "Cook something decent",
+  ]);
+
+  function updateInput(e) {
+    setNewItem(e.target.value);
+  }
+
+  function updateItems(e) {
+    e.preventDefault();
+    setTodos([...todos, newItem]);
+    setNewItem("");
+  }
+
+  function deleteItem(index) {
+    setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
+    console.log(todos);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>To Do List:</h1>
+      <Form
+        updateInput={updateInput}
+        updateItems={updateItems}
+        deleteItem={deleteItem}
+        todos={todos}
+        newItem={newItem}
+      />
     </div>
   );
 }
