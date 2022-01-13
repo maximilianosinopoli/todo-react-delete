@@ -20,6 +20,7 @@ function App() {
   const [todos, setTodos] = useState([
     "Learn something new",
     "Cook something decent",
+    "Improve my React Skills..",
   ]);
 
   function updateInput(e) {
@@ -43,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Task for {day}:</h1>
+      <h1>To Do List for {day}:</h1>
       <Form
         updateInput={updateInput}
         updateItems={updateItems}

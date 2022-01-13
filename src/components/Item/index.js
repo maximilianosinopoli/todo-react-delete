@@ -13,8 +13,10 @@ function Item({ text, deleteItem }) {
     <div>
       <p className={cross ? "cross" : ""}>
         {text}
-        <button onClick={deleteItem}>X</button>
-        <input type="checkbox" onClick={updateCross} />
+        <button className="button" onClick={deleteItem}>
+          X
+        </button>
+        <input className="item" type="checkbox" onClick={updateCross} />
       </p>
     </div>
   );
