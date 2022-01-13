@@ -6,7 +6,7 @@ function List({ todos, deleteItem }) {
     <ul>
       {todos.map((item, index) => {
         return (
-          <li key={item}>
+          <li key={index}>
             <Item
               className="cross"
               text={item}

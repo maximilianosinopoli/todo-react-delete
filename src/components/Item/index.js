@@ -6,6 +6,7 @@ function Item({ text, deleteItem }) {
 
   function updateCross() {
     setCross(!cross);
+    console.log(cross);
   }
 
   return (

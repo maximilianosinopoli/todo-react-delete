@@ -27,14 +27,18 @@ function App() {
   }
 
   function updateItems(e) {
-    e.preventDefault();
-    setTodos([...todos, newItem]);
-    setNewItem("");
+    if (newItem !== "") {
+      e.preventDefault();
+      setTodos([...todos, newItem]);
+      setNewItem("");
+    } else {
+      e.preventDefault();
+      alert("Write down a task! Try Again!");
+    }
   }
 
   function deleteItem(index) {
     setTodos([...todos.slice(0, index), ...todos.slice(index + 1)]);
-    console.log(todos);
   }
 
   return (
