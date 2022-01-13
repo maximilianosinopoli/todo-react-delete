@@ -8,6 +8,7 @@ function List({ todos, deleteItem }) {
         return (
           <li key={item}>
             <Item
+              className="cross"
               text={item}
               deleteItem={() => {
                 deleteItem(index);

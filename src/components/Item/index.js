@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Item.css";
 
 function Item({ text, deleteItem }) {
+  const [cross, setCross] = useState(false);
+
+  function updateCross() {
+    setCross(!cross);
+  }
+
   return (
     <div>
-      <p>
+      <p className={cross ? "cross" : ""}>
         {text}
         <button onClick={deleteItem}>X</button>
-        <input type="checkbox" />
+        <input type="checkbox" onClick={updateCross} />
       </p>
     </div>
   );
