@@ -3,6 +3,19 @@ import Form from "../Form";
 import { useState } from "react";
 
 function App() {
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const date = new Date();
+  let day = weekday[date.getDay()];
+
   const [newItem, setNewItem] = useState("");
   const [todos, setTodos] = useState([
     "Learn something new",
@@ -26,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To Do List:</h1>
+      <h1>Task for {day}:</h1>
       <Form
         updateInput={updateInput}
         updateItems={updateItems}

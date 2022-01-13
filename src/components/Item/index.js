@@ -6,6 +6,7 @@ function Item({ text, deleteItem }) {
       <p>
         {text}
         <button onClick={deleteItem}>X</button>
+        <input type="checkbox" />
       </p>
     </div>
   );
